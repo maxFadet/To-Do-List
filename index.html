@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,29 @@
     <script defer src="JavaScript/javascript.js"></script>
     <title>Lista zadań</title>
 </head>
-<body>
-    
-<div class="container">
-    <form class="js-form">
-        <input class="js-newTask">
-        <button>Dodaj zadanie</button>
-    </form>
-    
-    <ul class="js-tasks">
-    
-    </ul>
-</div>
+
+<body class="body">
+    <div class="blank">
+        <header>
+            <h1>Lista zadań</h1>
+        </header>
+        <main>
+            <section class="blank__container">
+                <h2 class="blank__containerName">Dodaj nowe zadanie</h2>
+                <form class="blank__form js-form">
+                    <input class="blank__textArea js-newTask" placeholder="Co jest do zrobienia?" autofocus>
+                    <button class="blank__button">Dodaj zadanie</button>
+                </form>
+            </section>
+            <section class="blank__container">
+                <h2 class="blank__containerName">Lista zadań</h2>
+                <ul class="blank__list js-tasks">
+
+                </ul>
+            </section>
+        </main>
+    </div>
 
 </body>
+
 </html>

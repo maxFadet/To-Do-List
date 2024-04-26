@@ -6,8 +6,81 @@
     box-sizing: inherit;
 }
 
-.container {
-    margin: auto;
-    padding: 30px;
-    max-width: 1000px;
+.body {
+    background-color: #eeeeee;
 }
+
+.blank {
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 900px;
+}
+
+.blank__container {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main"
+    ;
+    background-color: white;
+    margin-bottom: 10px;
+    box-shadow: 0 0 7px #dddddd;
+}
+
+.blank__containerName {
+    border-bottom: 2px solid #eeeeee;
+    grid-area: header;
+    padding: 20px;
+    margin: 0;
+}
+
+.blank__form {
+    grid-area: main;
+    padding: 20px;
+    display: grid;
+    grid-template-columns:minmax(100px, 1fr) 150px;
+    grid-gap: 20px;
+}
+
+.blank__textArea { 
+    padding: 10px;
+} 
+
+.blank__button {
+    padding: 10px;
+    background-color: #007282;
+    color: white;
+    border: none;
+}
+
+
+
+/* @media(max-width:767px) {
+    .blank__form {
+        flex-wrap: wrap;
+    }
+} */
+
+
+
+.blank__list {
+    list-style: none;
+}
+
+/* @media(max-width: 767px) {
+    .blank__textArea {
+        flex-basis: 100%;
+    }
+}
+
+@media(max-width: 767px) {
+    .blank__button {
+        flex-basis: 100%;
+    }
+} */
+
+@media (max-width:767px) {
+    .blank__form {
+        grid-template-columns: 1fr;
+    }
+    }
