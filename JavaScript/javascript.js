@@ -11,6 +11,7 @@
         },
     ];
 
+
     const addNewTask = (newTaskContent) => {
         tasks.push({
             content: newTaskContent,
@@ -58,7 +59,11 @@
         for (const task of tasks) {
             htmlString += `
   <li class="blank__listItem">
-  <button class="blank__buttonList js-done">✔</button>
+  <button class="blank__buttonList js-done"
+  ${task.done ? "style=\"color: #fff\"" : "style=\"color:rgb(26, 123, 30)\""}
+  >
+  ✔
+  </button>
   <span class="blank__listContent"
   ${task.done ? "style=\"text-decoration: line-through\"" : ""}
   >
@@ -94,18 +99,17 @@
         addNewTask(newTaskContent);
     };
 
- 
+
+
+
     const init = () => {
         render();
 
         const form = document.querySelector(".js-form");
         const sendTaskBtn = document.querySelector(".js-sendTaskBtn");
-
         form.addEventListener("submit", onFormSubmit);
 
         sendTaskBtn.addEventListener("click", focusForm);
-
-
     };
 
     init();
