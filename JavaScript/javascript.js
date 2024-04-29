@@ -16,7 +16,9 @@
             content: newTaskContent,
         });
         render();
-    }
+        const newTaskInput = document.querySelector(".js-newTask");
+        newTaskInput.value = "";
+    };
 
     const removeTask = (taskIndex) => {
         tasks.splice(taskIndex, 1);
@@ -48,6 +50,7 @@
         });
     };
 
+
     const render = () => {
 
         let htmlString = "";
@@ -73,6 +76,12 @@
     };
 
 
+    const focusForm = () => {
+        const inputField = document.querySelector(".js-newTask");
+        inputField.focus();
+    };
+
+
     const onFormSubmit = (event) => {
         event.preventDefault();
 
@@ -83,15 +92,20 @@
         };
 
         addNewTask(newTaskContent);
-
     };
 
+ 
     const init = () => {
         render();
 
         const form = document.querySelector(".js-form");
+        const sendTaskBtn = document.querySelector(".js-sendTaskBtn");
 
         form.addEventListener("submit", onFormSubmit);
+
+        sendTaskBtn.addEventListener("click", focusForm);
+
+
     };
 
     init();
