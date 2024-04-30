@@ -8,6 +8,12 @@
 
 .body {
     background-color: #eeeeee;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth"100;
 }
 
 .blank {
@@ -77,7 +83,7 @@
     padding: 20px;
     align-items: center;
     word-wrap: break-word;
-    
+
 }
 
 .blank__buttonList {
@@ -90,10 +96,10 @@
 }
 
 .blank__buttonList--delete {
-    background-color: #ed2938; 
+    background-color: #ed2938;
 }
 
 .blank__listContent {
-    color:red ;
-   
+    color: red;
+
 }
