@@ -62,14 +62,14 @@
   <button class="blank__buttonList js-done"
   ${task.done ? "style=\"color: #fff\"" : "style=\"color:rgb(26, 123, 30)\""}
   >
-  ✔
+  ✓
   </button>
   <span class="blank__listContent"
   ${task.done ? "style=\"text-decoration: line-through\"" : ""}
   >
   ${task.content}
   </span>
-  <button class="blank__buttonList blank__buttonList--delete js-remove">🗑</button>
+  <button class="blank__buttonList blank__buttonList--delete js-remove">✗</button>
   </li>
   `;
         };
