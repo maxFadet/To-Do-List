@@ -50,6 +50,7 @@
 
 .blank__textArea {
     padding: 10px;
+    border: 2px solid #eeeeee;
 }
 
 .blank__button {
@@ -57,6 +58,11 @@
     background-color: #007282;
     color: white;
     border: none;
+}
+
+.blank__button:active {
+    transform: scale(0.98); 
+    transition: 0.2s ease;
 }
 
 
@@ -95,11 +101,12 @@
     height: 35px;
 }
 
-.blank__buttonList--delete {
-    background-color: #ed2938;
+.blank__buttonList:active {
+    transform: scale(0.93); 
+    transition: 0.2s ease;
 }
 
-.blank__listContent {
-    color: red;
 
+.blank__buttonList--delete {
+    background-color: #ed2938;
 }
