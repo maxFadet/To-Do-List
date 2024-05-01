@@ -87,7 +87,8 @@
   >
   ${task.content}
   </span>
-  <button class="blank__buttonList blank__buttonList--menu js-moveTask">✗</button>
+  <button class="blank__buttonList blank__buttonList--stick js-moveTask">
+  <img class="blank__buttonImage" src="image/stick.png" alt="stick-your-task"></button>
   <button class="blank__buttonList blank__buttonList--delete js-remove">✗</button>
   </li>
   `;
