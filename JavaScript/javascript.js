@@ -64,7 +64,7 @@
   >
   ✓
   </button>
-  <span class="blank__listContent"
+  <span
   ${task.done ? "style=\"text-decoration: line-through\"" : ""}
   >
   ${task.content}
