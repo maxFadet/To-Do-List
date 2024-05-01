@@ -31,6 +31,15 @@
         render();
     };
 
+    const moveTaskToTop = (taskIndex) => {
+
+        if (taskIndex >= 0 && taskIndex < tasks.length) {
+            const taskToMove = tasks.splice(taskIndex, 1)[0];
+            tasks.unshift(taskToMove);
+            render();
+        };
+    };
+
     const bindEvents = () => {
 
 
@@ -49,6 +58,15 @@
                 toggleTaskDone(index);
             });
         });
+
+        const moveTaskButtons = document.querySelectorAll(".js-moveTask");
+        moveTaskButtons.forEach((moveTaskButton, index) => {
+            moveTaskButton.addEventListener("click", () => {
+                moveTaskToTop(index);
+            });
+        });
+
+
     };
 
 
@@ -69,6 +87,7 @@
   >
   ${task.content}
   </span>
+  <button class="blank__buttonList blank__buttonList--menu js-moveTask">✗</button>
   <button class="blank__buttonList blank__buttonList--delete js-remove">✗</button>
   </li>
   `;
@@ -79,6 +98,7 @@
         bindEvents();
 
     };
+
 
 
     const focusForm = () => {
