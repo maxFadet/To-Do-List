@@ -24,6 +24,12 @@
     grid-gap: 20px;
 }
 
+@media (max-width:767px) {
+    .blank__form {
+        grid-template-columns: 1fr;
+    }
+}
+
 .blank__textArea {
     padding: 10px;
     border: 2px solid #eeeeee;
@@ -46,13 +52,6 @@
     list-style: none;
     padding-left: 0;
     margin: 20px;
-}
-
-
-@media (max-width:767px) {
-    .blank__form {
-        grid-template-columns: 1fr;
-    }
 }
 
 .blank__listItem {
@@ -99,4 +98,10 @@
 
 .blank__buttonImage {
     width: 25px;
+    opacity: 0.5;
+    transition: 0.3s ease;
+}
+
+.blank__buttonImage:hover {
+    opacity: 1;
 }
