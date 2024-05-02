@@ -32,15 +32,15 @@
     };
 
     const moveTaskToTop = (taskIndex) => {
-
         if (taskIndex >= 0 && taskIndex < tasks.length) {
             const taskToMove = tasks.splice(taskIndex, 1)[0];
             tasks.unshift(taskToMove);
+
             render();
         };
     };
 
-    const bindEvents = () => {
+    const bunchOfEvents = () => {
 
 
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -70,6 +70,13 @@
     };
 
 
+
+    const focusOnForm = () => {
+        const inputField = document.querySelector(".js-newTask");
+        inputField.focus();
+    };
+
+
     const render = () => {
 
         let htmlString = "";
@@ -88,30 +95,26 @@
   ${task.content}
   </span>
   <button class="blank__buttonList blank__buttonList--stick js-moveTask">
-  <img class="blank__buttonImage" src="image/stick.png" alt="stick-your-task"></button>
-  <button class="blank__buttonList blank__buttonList--delete js-remove">✗</button>
+  <img class="blank__buttonImage" src="image/stick.png" alt="stick-your-task">
+  </button>
+  <button class="blank__buttonList blank__buttonList--delete js-remove">
+  ✗
+  </button>
   </li>
   `;
         };
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
 
-        bindEvents();
+        bunchOfEvents();
 
-    };
-
-
-
-    const focusForm = () => {
-        const inputField = document.querySelector(".js-newTask");
-        inputField.focus();
     };
 
 
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const newTaskContent = document.querySelector(".js-newTask").value.trim()
+        const newTaskContent = document.querySelector(".js-newTask").value.trim();
 
         if (newTaskContent === "") {
             return;
@@ -121,18 +124,16 @@
     };
 
 
-
-
     const init = () => {
         render();
 
         const form = document.querySelector(".js-form");
         const sendTaskBtn = document.querySelector(".js-sendTaskBtn");
+        
         form.addEventListener("submit", onFormSubmit);
-
-        sendTaskBtn.addEventListener("click", focusForm);
+        sendTaskBtn.addEventListener("click", focusOnForm);
     };
 
     init();
 
-}
+};
