@@ -2,11 +2,11 @@
 
     const tasks = [
         {
-            content: "przygotowac zupe",
+            content: "zadanie nie wykonane",
             done: false,
         },
         {
-            content: "poćwiczyć",
+            content: "zadanie już wykonane",
             done: true,
         },
     ];
