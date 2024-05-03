@@ -83,25 +83,25 @@
 
         for (const task of tasks) {
             htmlString += `
-  <li class="blank__listItem">
-  <button class="blank__buttonList js-done"
-  ${task.done ? "style=\"color: #fff\"" : "style=\"color:rgb(26, 123, 30)\""}
-  >
-  ✓
-  </button>
-  <span
-  ${task.done ? "style=\"text-decoration: line-through\"" : ""}
-  >
-  ${task.content}
-  </span>
-  <button class="blank__buttonList blank__buttonList--stick js-moveTask">
-  <img class="blank__buttonImage" src="image/stick.png" alt="stick-your-task">
-  </button>
-  <button class="blank__buttonList blank__buttonList--delete js-remove">
-  ✗
-  </button>
-  </li>
-  `;
+            <li class="blank__listItem">
+              <button class="blank__buttonList js-done"
+                ${task.done ? "style=\"color: #fff\"" : "style=\"color:rgb(26, 123, 30)\""}
+              >
+                ✓
+              </button>
+              <span
+                ${task.done ? "style=\"text-decoration: line-through\"" : ""}
+              >
+                ${task.content}
+              </span>
+              <button class="blank__buttonList blank__buttonList--stick js-moveTask">
+                <img class="blank__buttonImage" src="image/stick.png" alt="stick-your-task">
+              </button>
+              <button class="blank__buttonList blank__buttonList--delete js-remove">
+                ✗
+              </button>
+            </li>
+          `;
         };
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
@@ -129,7 +129,7 @@
 
         const form = document.querySelector(".js-form");
         const sendTaskBtn = document.querySelector(".js-sendTaskBtn");
-        
+
         form.addEventListener("submit", onFormSubmit);
         sendTaskBtn.addEventListener("click", focusOnForm);
     };
