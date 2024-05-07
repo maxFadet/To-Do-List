@@ -66,6 +66,11 @@
 
 }
 
+
+.blank__textList {
+    text-decoration: line-through;
+}
+
 .blank__buttonList {
     background-color: rgb(26, 123, 30);
     color: #fff;
@@ -73,6 +78,10 @@
     border: none;
     width: 24px;
     height: 35px;
+}
+
+.blank__buttonList--greenMark {
+color: rgb(26, 123, 30);
 }
 
 .blank__buttonList:active {
