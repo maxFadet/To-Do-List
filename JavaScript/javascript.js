@@ -84,13 +84,13 @@
         for (const task of tasks) {
             htmlString += `
             <li class="blank__listItem">
-              <button class="blank__buttonList js-done"
-                ${task.done ? "style=\"color: #fff\"" : "style=\"color:rgb(26, 123, 30)\""}
+              <button class= "blank__buttonList js-done
+                ${task.done ? "" : "blank__buttonList blank__buttonList--greenMark"}"
               >
                 ✓
               </button>
               <span
-                ${task.done ? "style=\"text-decoration: line-through\"" : ""}
+                ${task.done ? "class=blank__textList" : ""}
               >
                 ${task.content}
               </span>
