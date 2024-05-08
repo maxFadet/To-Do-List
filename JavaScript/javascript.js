@@ -1,46 +1,56 @@
 {
 
-    const tasks = [
-        {
-            content: "zadanie nie wykonane",
-            done: false,
-        },
-        {
-            content: "zadanie już wykonane",
-            done: true,
-        },
-    ];
+    let tasks = [];
 
+    let hideDoneTask = false;
+
+    const toggleButtonHideDoneTask = {
+        [hideDoneTask]: true,
+    }
 
     const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-        });
+        tasks = [
+            ...tasks,
+            { content: newTaskContent },
+        ];
         render();
         const newTaskInput = document.querySelector(".js-newTask");
         newTaskInput.value = "";
     };
 
+
+
     const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
+        tasks = tasks.filter((task, index) => index !== taskIndex)
         render();
     };
 
+
+    
     const toggleTaskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
+        tasks = tasks.map((task, index) => {
+            if (index === taskIndex) {
+                return {
+                    ...task,
+                    done: !task.done
+                };
+            }
+            return task;
+        });
+
         render();
     };
 
-    const moveTaskToTop = (taskIndex) => {
-        if (taskIndex >= 0 && taskIndex < tasks.length) {
-            const taskToMove = tasks.splice(taskIndex, 1)[0];
-            tasks.unshift(taskToMove);
+    // const moveTaskToTop = (taskIndex) => {
+    //     if (taskIndex >= 0 && taskIndex < tasks.length) {
+    //         const taskToMove = tasks.splice(taskIndex, 1)[0];
+    //         tasks.unshift(taskToMove);
 
-            render();
-        };
-    };
+    //         render();
+    //     };
+    // };
 
-    const bunchOfEvents = () => {
+    const bindRemoveEvents = () => {
 
 
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -51,6 +61,9 @@
             });
         });
 
+    };
+
+    const bindToggleDoneEvents = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
 
         toggleDoneButtons.forEach((toggleDoneButton, index) => {
@@ -58,16 +71,15 @@
                 toggleTaskDone(index);
             });
         });
-
-        const moveTaskButtons = document.querySelectorAll(".js-moveTask");
-        moveTaskButtons.forEach((moveTaskButton, index) => {
-            moveTaskButton.addEventListener("click", () => {
-                moveTaskToTop(index);
-            });
-        });
-
-
     };
+    // const moveTaskButtons = document.querySelectorAll(".js-moveTask");
+    // moveTaskButtons.forEach((moveTaskButton, index) => {
+    //     moveTaskButton.addEventListener("click", () => {
+    //         moveTaskToTop(index);
+    //     });
+    // });
+
+
 
 
 
@@ -77,36 +89,80 @@
     };
 
 
-    const render = () => {
-
+    const renderTask = () => {
         let htmlString = "";
 
         for (const task of tasks) {
             htmlString += `
-            <li class="blank__listItem">
-              <button class= "blank__buttonList js-done
-                ${task.done ? "" : "blank__buttonList blank__buttonList--greenMark"}"
-              >
-                ✓
-              </button>
-              <span
-                ${task.done ? "class=blank__textList" : ""}
-              >
-                ${task.content}
-              </span>
-              <button class="blank__buttonList blank__buttonList--stick js-moveTask">
-                <img class="blank__buttonImage" src="image/stick.png" alt="stick-your-task">
-              </button>
-              <button class="blank__buttonList blank__buttonList--delete js-remove">
-                ✗
-              </button>
-            </li>
-          `;
+        <li class="blank__listItem">
+          <button class= "blank__buttonList js-done
+            ${task.done ? "" : "blank__buttonList blank__buttonList--greenMark"}"
+          >
+            ✓
+          </button>
+          <span
+            ${task.done ? "class=blank__textList" : ""}
+          >
+            ${task.content}
+          </span>
+          <button class="blank__buttonList blank__buttonList--delete js-remove">
+            ✗
+          </button>
+        </li>
+      `;
         };
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
 
-        bunchOfEvents();
+    };
+
+    const renderButtons = (tasks) => {
+
+        const findNonEmptyTask = tasks.find(({ content }) => content !== "");
+
+        let htmlString = "";
+
+        if (findNonEmptyTask) {
+            htmlString += `
+    <li class="blank__listControlButtons">
+      <button class= "blank__controlButtons js-toggleDoneTasks">
+        Ukryj ukończone
+      </button>
+    </li>
+    <li class="blank__listControlButtons">
+      <button class="blank__controlButtons">
+        Ukończ wszystkie
+      </button>
+    </li>
+  `;
+        };
+
+
+        document.querySelector(".js-listControlButtons").innerHTML = htmlString;
+    };
+
+    const switchHidenTask = (tasks) => {
+
+    };
+
+
+
+    const bindButtonsEvents = () => {
+
+        const toggleHiddenTasks = document.querySelector(".js-toggleDoneTasks");
+        toggleHiddenTasks.addEventListener("click", () => {
+            switchHidenTask()
+        })
+     };
+
+    const render = () => {
+
+        renderTask();
+        renderButtons(tasks)
+
+        bindRemoveEvents();
+        bindToggleDoneEvents();
+        bindButtonsEvents();
 
     };
 
@@ -137,3 +193,10 @@
     init();
 
 };
+
+// const seasones = ["jesień", "zima", "lato", "wiosna"]
+
+
+// const exceptFirst = seasones.slice(1, 4)
+
+// console.log(exceptFirst);
