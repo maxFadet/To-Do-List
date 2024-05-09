@@ -2,11 +2,7 @@
 
     let tasks = [];
 
-    let hideDoneTask = false;
 
-    const toggleButtonHideDoneTask = {
-        [hideDoneTask]: true,
-    }
 
     const addNewTask = (newTaskContent) => {
         tasks = [
@@ -26,7 +22,7 @@
     };
 
 
-    
+
     const toggleTaskDone = (taskIndex) => {
         tasks = tasks.map((task, index) => {
             if (index === taskIndex) {
@@ -94,7 +90,7 @@
 
         for (const task of tasks) {
             htmlString += `
-        <li class="blank__listItem">
+        <li class="blank__listItem blank__listItemHidden">
           <button class= "blank__buttonList js-done
             ${task.done ? "" : "blank__buttonList blank__buttonList--greenMark"}"
           >
@@ -130,7 +126,8 @@
       </button>
     </li>
     <li class="blank__listControlButtons">
-      <button class="blank__controlButtons">
+      <button class="blank__controlButtons js-completeAllTasks" ${tasks.every(task => task.done) ? "disabled" : ""
+                }>
         Ukończ wszystkie
       </button>
     </li>
@@ -139,21 +136,55 @@
 
 
         document.querySelector(".js-listControlButtons").innerHTML = htmlString;
-    };
 
-    const switchHidenTask = (tasks) => {
 
     };
 
+
+    let hideDoneTask = false;
+    const toggleButtonHiddenTask = {
+        [hideDoneTask]: true,
+    }
+
+
+    // const switchHiddenAllTasks = (task) => {
+    //     tasks = tasks.map(task = task.done)
+    // };
+
+
+    const completeAllTasks = () => {
+
+        tasks = tasks.map(task => {
+            if (!task.done) {
+                // Если задача не выполнена, вернуть ее с обновленным свойством done: true
+                return { ...task, done: true };
+            } else {
+                // Если задача уже выполнена, вернуть ее без изменений
+                return task;
+            }
+        });
+
+        render();
+    };
 
 
     const bindButtonsEvents = () => {
 
-        const toggleHiddenTasks = document.querySelector(".js-toggleDoneTasks");
-        toggleHiddenTasks.addEventListener("click", () => {
-            switchHidenTask()
-        })
-     };
+
+
+        // const toggleHiddenTasks = document.querySelector(".js-toggleDoneTasks");
+        // toggleHiddenTasks.addEventListener("click", switchHiddenAllTasks);
+
+
+
+        const toggleAllTasksButton = document.querySelector(".js-completeAllTasks");
+        if (toggleAllTasksButton) {
+            toggleAllTasksButton.addEventListener("click", completeAllTasks);
+        }
+
+
+
+    };
 
     const render = () => {
 
@@ -193,10 +224,3 @@
     init();
 
 };
-
-// const seasones = ["jesień", "zima", "lato", "wiosna"]
-
-
-// const exceptFirst = seasones.slice(1, 4)
-
-// console.log(exceptFirst);
