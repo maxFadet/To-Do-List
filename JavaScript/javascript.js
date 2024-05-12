@@ -3,6 +3,22 @@
     let tasks = [];
 
 
+    let hideDoneTasks = false;
+
+    const switchAllTasks = () => {
+        hideDoneTasks = !hideDoneTasks;
+        render();
+    };
+
+
+    const completeAllTasks = () => {
+        tasks = tasks.map((task) => ({
+            ...task,
+            done: true,
+        }));
+        render();
+    };
+
 
     const addNewTask = (newTaskContent) => {
         tasks = [
@@ -10,10 +26,20 @@
             { content: newTaskContent },
         ];
         render();
+        clearNewTaskInput();
+    };
+
+
+    const clearNewTaskInput = () => {
         const newTaskInput = document.querySelector(".js-newTask");
         newTaskInput.value = "";
     };
 
+
+    const focusOnForm = () => {
+        const inputField = document.querySelector(".js-newTask");
+        inputField.focus();
+    };
 
 
     const removeTask = (taskIndex) => {
@@ -37,14 +63,6 @@
         render();
     };
 
-    // const moveTaskToTop = (taskIndex) => {
-    //     if (taskIndex >= 0 && taskIndex < tasks.length) {
-    //         const taskToMove = tasks.splice(taskIndex, 1)[0];
-    //         tasks.unshift(taskToMove);
-
-    //         render();
-    //     };
-    // };
 
     const bindRemoveEvents = () => {
 
@@ -68,21 +86,6 @@
             });
         });
     };
-    // const moveTaskButtons = document.querySelectorAll(".js-moveTask");
-    // moveTaskButtons.forEach((moveTaskButton, index) => {
-    //     moveTaskButton.addEventListener("click", () => {
-    //         moveTaskToTop(index);
-    //     });
-    // });
-
-
-
-
-
-    const focusOnForm = () => {
-        const inputField = document.querySelector(".js-newTask");
-        inputField.focus();
-    };
 
 
     const renderTask = () => {
@@ -90,11 +93,10 @@
 
         for (const task of tasks) {
             htmlString += `
-        <li class="blank__listItem blank__listItemHidden">
-          <button class= "blank__buttonList js-done
-            ${task.done ? "" : "blank__buttonList blank__buttonList--greenMark"}"
+        <li class="blank__listItem ${task.done && hideDoneTasks ? "blank__listItem--Hidden" : ""}">
+          <button class= "blank__buttonList blank__buttonList--greenMark js-done"}"
           >
-            ✓
+          ${task.done ? "✓" : ""}
           </button>
           <span
             ${task.done ? "class=blank__textList" : ""}
@@ -109,82 +111,50 @@
         };
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
-
     };
 
-    const renderButtons = (tasks) => {
 
-        const findNonEmptyTask = tasks.find(({ content }) => content !== "");
+    const renderButtons = () => {
 
         let htmlString = "";
+
+        const findNonEmptyTask = tasks.find(({ content }) => content !== "");
 
         if (findNonEmptyTask) {
             htmlString += `
     <li class="blank__listControlButtons">
       <button class= "blank__controlButtons js-toggleDoneTasks">
-        Ukryj ukończone
+      ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
       </button>
     </li>
     <li class="blank__listControlButtons">
-      <button class="blank__controlButtons js-completeAllTasks" ${tasks.every(task => task.done) ? "disabled" : ""
-                }>
-        Ukończ wszystkie
+      <button class="blank__controlButtons js-completeAllTasks" 
+      ${tasks.every(task => task.done) ? "disabled" : ""}>
+          Ukończ wszystkie
       </button>
     </li>
   `;
         };
 
-
         document.querySelector(".js-listControlButtons").innerHTML = htmlString;
-
-
     };
 
 
-    let hideDoneTask = false;
-    const toggleButtonHiddenTask = {
-        [hideDoneTask]: true,
-    }
-
-
-    // const switchHiddenAllTasks = (task) => {
-    //     tasks = tasks.map(task = task.done)
-    // };
-
-
-    const completeAllTasks = () => {
-
-        tasks = tasks.map(task => {
-            if (!task.done) {
-                // Если задача не выполнена, вернуть ее с обновленным свойством done: true
-                return { ...task, done: true };
-            } else {
-                // Если задача уже выполнена, вернуть ее без изменений
-                return task;
-            }
-        });
-
-        render();
-    };
 
 
     const bindButtonsEvents = () => {
 
+        const switchHiddenTasksButton = document.querySelector(".js-toggleDoneTasks");
+        if (switchHiddenTasksButton) {
+            switchHiddenTasksButton.addEventListener("click", switchAllTasks);
+        };
 
-
-        // const toggleHiddenTasks = document.querySelector(".js-toggleDoneTasks");
-        // toggleHiddenTasks.addEventListener("click", switchHiddenAllTasks);
-
-
-
-        const toggleAllTasksButton = document.querySelector(".js-completeAllTasks");
-        if (toggleAllTasksButton) {
-            toggleAllTasksButton.addEventListener("click", completeAllTasks);
+        const completeAllTasksButton = document.querySelector(".js-completeAllTasks");
+        if (completeAllTasksButton) {
+            completeAllTasksButton.addEventListener("click", completeAllTasks);
         }
-
-
-
     };
+
 
     const render = () => {
 
