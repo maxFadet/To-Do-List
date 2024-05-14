@@ -15,6 +15,15 @@ The [ToDoList](https://maxfadet.github.io/To-Do-List/) project is a simple web a
   <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" **alt="Git" width="40" height="40"/>
 </div>
+
+&nbsp;
+  - Applied immutability in JavaScript
+  - ES6+ Features JavaScript
+  - CSS Grid Layout
+  - Media-queries
+  - Normalize.css
+  - BEM convention
+  - Markdown
 &nbsp;
 
 
@@ -29,11 +38,11 @@ The [ToDoList](https://maxfadet.github.io/To-Do-List/) project is a simple web a
 3. **Delete Task:**
    - Users can delete a task by clicking <img src="https://raw.githubusercontent.com/maxFadet/To-Do-List/master/image/button-delete.gif" width="25">
 
-4. **Move Task Up:**
-   - Users can move a task up in the list by clicking <img src="https://raw.githubusercontent.com/maxFadet/To-Do-List/master/image/stick.png" width="20">
-   
-   For example: 
-     <img src="https://raw.githubusercontent.com/maxFadet/To-Do-List/master/image/button-go-up.gif" width="250">
+4. **Switching task groups**
+   - Users can switch between completed and unfinished tasks by clicking <img src="https://raw.githubusercontent.com/maxFadet/To-Do-List/master/image/button-delete.gif" width="25">
+
+5. ****
+   - Users can mark all tasks as completed at once by clicking <img src="https://raw.githubusercontent.com/maxFadet/To-Do-List/master/image/button-delete.gif" width="25">
 
 &nbsp;
 ## The demonstration of the project's main functions:
