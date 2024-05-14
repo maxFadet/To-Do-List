@@ -1,0 +1,35 @@
+.form {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    grid-gap: 20px;
+}
+
+@media (max-width:767px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form__textArea {
+    padding: 10px;
+    border: 2px solid #eeeeee;
+}
+
+.form__button {
+    padding: 10px;
+    background-color: hsl(180, 100%, 25%);
+    color: white;
+    border: none;
+    transition: 0.4s;
+}
+
+.form__button:hover {
+    transform: scale(1.1);
+    background: hsl(180, 100%, 30%);
+}
+
+.form__button:active {
+    transform: scale(0.98);
+    transition: 0.2s ease;
+    background: hsl(180, 100%, 35%);
+}

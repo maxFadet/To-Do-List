@@ -15,3 +15,15 @@
     font-variation-settings:
         "wdth"100;
 }
+
+.blank__controlButton {
+    cursor: pointer;
+}
+
+.blank__button {
+    cursor: pointer;
+}
+
+.blank__buttonList {
+    cursor: pointer;
+}

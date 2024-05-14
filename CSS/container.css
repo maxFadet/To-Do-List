@@ -1,0 +1,60 @@
+.container {
+    background-color: white;
+    margin-bottom: 10px;
+    box-shadow: 0 0 7px #dddddd;
+}
+
+.container__header {
+    border-bottom: 2px solid #eeeeee;
+    margin: 0;
+    padding: 20px;
+}
+
+.container__header--headerWithButtons {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px;
+    padding: 0 20px;
+}
+
+.container__body {
+    padding: 20px;
+}
+
+@media (max-width: 767px) {
+    .container__header--headerWithButtons {
+        grid-template-columns: 1fr;
+        text-align: center;
+        grid-gap: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .container .container__taskControlPanel {
+        grid-template-columns: 1fr;
+        padding-bottom: 20px;
+    }
+}
+
+.container__taskControlPanel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.container__headerButton {
+    border: none;
+    background-color: transparent;
+    color: teal;
+    transition: 0.4s;
+}
+
+.container__headerButton:hover {
+    color: hsl(180, 100%, 35%);
+}
+
+.container__headerButton:disabled {
+    color: hsl(0, 0%, 70%);
+    cursor: not-allowed;
+
+}
