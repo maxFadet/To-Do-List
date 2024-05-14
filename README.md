@@ -39,10 +39,10 @@ The [ToDoList](https://maxfadet.github.io/To-Do-List/) project is a simple web a
    - Users can delete a task by clicking <img src="https://raw.githubusercontent.com/maxFadet/To-Do-List/master/image/button-delete.gif" width="25">
 
 4. **Switching task groups**
-   - Users can switch between completed and unfinished tasks by clicking <img src="https://raw.githubusercontent.com/maxFadet/To-Do-List/master/image/button-delete.gif" width="25">
+   - Users can switch between completed and unfinished tasks by clicking <img src="https://raw.githubusercontent.com/maxFadet/To-Do-List/master/image/button-cover.png" width="150">
 
-5. ****
-   - Users can mark all tasks as completed at once by clicking <img src="https://raw.githubusercontent.com/maxFadet/To-Do-List/master/image/button-delete.gif" width="25">
+5. **Complete all tasks**
+   - Users can mark all tasks as completed at once by clicking <img src="https://raw.githubusercontent.com/maxFadet/To-Do-List/master/image/button-all-is-done.png" width="150">
 
 &nbsp;
 ## The demonstration of the project's main functions:
