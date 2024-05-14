@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="CSS/style.css" rel="stylesheet">
     <link href="CSS/blank.css" rel="stylesheet">
+    <link href="CSS/form.css" rel="stylesheet">
+    <link href="CSS/tasks.css" rel="stylesheet">
+    <link href="CSS/container.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,16 +27,24 @@
             <h1>Lista zadań</h1>
         </header>
         <main>
-            <section class="blank__container">
-                <h2 class="blank__containerName">Dodaj nowe zadanie</h2>
-                <form class="blank__form js-form">
-                    <input class="blank__textArea js-newTask" placeholder="Co jest do zrobienia?" autofocus>
-                    <button class="blank__button js-sendTaskBtn">Dodaj zadanie</button>
-                </form>
+            <section class="container">
+                <h2 class="container__header">Dodaj nowe zadanie</h2>
+                <div class="container__body">
+                    <form class="form js-form">
+                        <input class="form__textArea js-newTask" placeholder="Co jest do zrobienia?" autofocus>
+                        <button class="form__button js-sendTaskBtn">Dodaj zadanie</button>
+                    </form>
+                </div>
             </section>
-            <section class="blank__container">
-                <h2 class="blank__containerName">Lista zadań</h2>
-                <ul class="blank__list js-tasks"></ul>
+
+            <section class="container">
+                <div class="container__header container__header--headerWithButtons">
+                    <h2>Lista zadań</h2>
+                    <div class="container__taskControlPanel js-listControlButtons"></div>
+                </div>
+                <div class="container__body">
+                    <ul class="tasks js-tasks"></ul>
+                </div>
             </section>
         </main>
     </div>
