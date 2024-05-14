@@ -93,17 +93,16 @@
 
         for (const task of tasks) {
             htmlString += `
-        <li class="blank__listItem ${task.done && hideDoneTasks ? "blank__listItem--Hidden" : ""}">
-          <button class= "blank__buttonList blank__buttonList--greenMark js-done"}"
+        <li class="tasks__item ${task.done && hideDoneTasks ? "tasks__item--hidden" : ""}">
+          <button class="tasks__button tasks__button--toggleDone js-done"}"
           >
           ${task.done ? "✓" : ""}
           </button>
-          <span
-            ${task.done ? "class=blank__textList" : ""}
+          <span class="tasks__content ${task.done ? "tasks__content--done" : ""}"
           >
             ${task.content}
           </span>
-          <button class="blank__buttonList blank__buttonList--delete js-remove">
+          <button class="tasks__button tasks__button--delete js-remove">
             ✗
           </button>
         </li>
@@ -122,18 +121,15 @@
 
         if (findNonEmptyTask) {
             htmlString += `
-    <li class="blank__listControlButtons">
-      <button class= "blank__controlButtons js-toggleDoneTasks">
-      ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
+      <button class= "container__headerButton js-toggleDoneTasks">
+          ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
       </button>
-    </li>
-    <li class="blank__listControlButtons">
-      <button class="blank__controlButtons js-completeAllTasks" 
+
+      <button class="container__headerButton js-completeAllTasks" 
       ${tasks.every(task => task.done) ? "disabled" : ""}>
           Ukończ wszystkie
       </button>
-    </li>
-  `;
+      `;
         };
 
         document.querySelector(".js-listControlButtons").innerHTML = htmlString;
