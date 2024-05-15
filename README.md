@@ -2,6 +2,8 @@
 
 The [ToDoList](https://maxfadet.github.io/To-Do-List/) project is a simple web application for creating task lists
 
+https://maxfadet.github.io/To-Do-List/
+
 <div align="center">
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmRseXB6NnI1d3A4ejhxNmxzcXdiZG13Y2k3bTVqb3dqaXo5cHdwMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0IAPszdB8MMjPxNhFL/giphy.gif" width="200">
 </div>
