@@ -1,6 +1,15 @@
 {
 
-    let tasks = [];
+    let tasks = [
+        {
+            content: "przkładowo zrobione zadanie",
+            done: true,
+        },
+        {
+            content: "przykładowo nie zrobione zadanie",
+            done: false,
+        },
+    ];
 
 
     let hideDoneTasks = false;
