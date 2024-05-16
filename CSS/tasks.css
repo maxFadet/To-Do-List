@@ -6,7 +6,7 @@
 
 .tasks__item {
     display: grid;
-    grid-template-columns: 35px minmax(100px, 1fr) 35px;
+    grid-template-columns: auto 1fr auto;
     grid-gap: 10px;
     border-bottom: 2px solid #eeeeee;
     padding: 10px;
