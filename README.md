@@ -26,6 +26,7 @@ The [ToDoList](https://maxfadet.github.io/To-Do-List/) project is a simple web a
   - Applied immutability in JavaScript
   - ES6+ Features JavaScript
   - CSS Grid Layout
+  - The box model
   - Media-queries
   - Normalize.css
   - BEM convention
