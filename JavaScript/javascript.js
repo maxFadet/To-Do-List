@@ -10,7 +10,6 @@
         },
     ];
 
-
     let hideDoneTasks = false;
 
     const switchAllTasks = () => {
