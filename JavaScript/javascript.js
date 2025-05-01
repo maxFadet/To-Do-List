@@ -17,7 +17,6 @@
         render();
     };
 
-
     const completeAllTasks = () => {
         tasks = tasks.map((task) => ({
             ...task,
