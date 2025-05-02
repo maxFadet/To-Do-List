@@ -25,7 +25,6 @@
         render();
     };
 
-
     const addNewTask = (newTaskContent) => {
         tasks = [
             ...tasks,
