@@ -34,7 +34,6 @@
         clearNewTaskInput();
     };
 
-
     const clearNewTaskInput = () => {
         const newTaskInput = document.querySelector(".js-newTask");
         newTaskInput.value = "";
