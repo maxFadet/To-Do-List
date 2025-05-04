@@ -39,7 +39,6 @@
         newTaskInput.value = "";
     };
 
-
     const focusOnForm = () => {
         const inputField = document.querySelector(".js-newTask");
         inputField.focus();
