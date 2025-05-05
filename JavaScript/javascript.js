@@ -44,7 +44,6 @@
         inputField.focus();
     };
 
-
     const removeTask = (taskIndex) => {
         tasks = tasks.filter((task, index) => index !== taskIndex)
         render();
