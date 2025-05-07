@@ -50,7 +50,6 @@
     };
 
 
-
     const toggleTaskDone = (taskIndex) => {
         tasks = tasks.map((task, index) => {
             if (index === taskIndex) {
