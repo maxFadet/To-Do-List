@@ -171,7 +171,6 @@
         addNewTask(newTaskContent);
     };
 
-
     const init = () => {
         render();
 
