@@ -107,7 +107,6 @@
         document.querySelector(".js-tasks").innerHTML = htmlString;
     };
 
-
     const renderButtons = () => {
 
         let htmlString = "";
