@@ -145,7 +145,6 @@
         }
     };
 
-
     const render = () => {
 
         renderTask();
