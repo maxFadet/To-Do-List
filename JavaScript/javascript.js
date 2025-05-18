@@ -131,7 +131,6 @@
 
 
 
-
     const bindButtonsEvents = () => {
 
         const switchHiddenTasksButton = document.querySelector(".js-toggleDoneTasks");
