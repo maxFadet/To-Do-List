@@ -1,4 +1,4 @@
-{
+ja{
     let tasks = [
         {
             content: "przkładowo zrobione zadanie",
@@ -128,7 +128,6 @@
 
         document.querySelector(".js-listControlButtons").innerHTML = htmlString;
     };
-
 
 
     const bindButtonsEvents = () => {
