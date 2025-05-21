@@ -129,7 +129,6 @@ ja{
         document.querySelector(".js-listControlButtons").innerHTML = htmlString;
     };
 
-
     const bindButtonsEvents = () => {
 
         const switchHiddenTasksButton = document.querySelector(".js-toggleDoneTasks");
