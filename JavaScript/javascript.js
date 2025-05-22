@@ -146,7 +146,6 @@ ja{
 
         renderTask();
         renderButtons(tasks)
-
         bindRemoveEvents();
         bindToggleDoneEvents();
         bindButtonsEvents();
