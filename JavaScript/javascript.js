@@ -72,7 +72,6 @@ ja{
                 removeTask(index);
             });
         });
-
     };
 
     const bindToggleDoneEvents = () => {
