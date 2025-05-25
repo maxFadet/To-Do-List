@@ -1,4 +1,4 @@
-ja{
+{
     let tasks = [
         {
             content: "przkładowo zrobione zadanie",
