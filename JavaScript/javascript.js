@@ -148,7 +148,6 @@
         bindRemoveEvents();
         bindToggleDoneEvents();
         bindButtonsEvents();
-
     };
 
     const onFormSubmit = (event) => {
